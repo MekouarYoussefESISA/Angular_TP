@@ -1,3 +1,4 @@
+
 <h3>Create a new ticket</h3>
 <form class="ticket-form" [formGroup]="ticketForm">
   <label for="title">
@@ -10,8 +11,22 @@
     <input class="input-custom" type="text" id="description" [formControlName]="'description'">
   </label>
   <br>
-  <button type="submit" class="btn-custom" (click)="addTicket()">Create</button>
+
+  <label for="major">
+    Major <br>
+    <select class="input-custom" id="major" [formControlName]="'major'">
+      <option id="selmaj" value="">--select a major--</option>
+       <option value="GE">General Engineering</option>
+      <option value="CS">Computer Science</option>
+      <option value="GB">General Business</option>
+      <option value="IT">Information Technology</option>
+
+    </select>
+  </label>
+  <br>
+
+  <button  type="submit" class="btn-custom" (click)="addTicket()">Create</button>
 </form>
 
 <!-- Uncomment below to see your form structure and how it changes-->
-<!--<br><br>{{ticketForm.getRawValue() | json}}-->
+<!-- <br>{{ticketForm.getRawValue() | json}}<br> -->

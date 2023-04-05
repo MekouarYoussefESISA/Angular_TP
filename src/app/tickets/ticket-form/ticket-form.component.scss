@@ -1,7 +1,84 @@
 @import '../../../styles/card.scss';
 
-button {
-  background-color: transparent;
+.btn-custom {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  background-color: rgb(0, 140, 255); /* Change to desired color */
   border: none;
-  font-size: 1em;
+  border-radius: 0px;
+  margin-left: 100px;
 }
+.btn-custom::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  opacity: 0.2;
+  transform: translateX(-100%);
+  transition: all 0.4s ease-in-out;
+}
+.btn-custom:hover::before{
+  transform: translateX(0%);
+
+}
+.btn-custom:hover{
+  color: rgb(2, 42, 129);
+  cursor: pointer;
+ 
+ }
+
+.ticket-form {
+  display: inline-block;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 16px;
+}
+
+.label-custom {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.input-custom {
+  padding:2px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease-in-out;
+  font-size: 16px;
+}
+
+.input-custom:focus {
+  outline: none;
+  border-color: #0078d7;
+}
+option {
+  font-size: 16px;
+}
+
+select {
+  padding:2px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease-in-out;
+  font-size: 16px;
+}
+#selmaj {
+  background-color: rgb(214, 214, 214);
+  
+}
+
+ #selmaj:hover {
+  cursor: not-allowed;
+}
+ 
