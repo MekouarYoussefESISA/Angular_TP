@@ -9,7 +9,7 @@ import { StudentService } from 'src/services/student/student.service';
   templateUrl: './ticket-list.component.html',
   styleUrls: ['./ticket-list.component.scss']
 })
-export class TicketListComponent   {
+export class TicketListComponent implements OnInit{
 
   public ticketList: Ticket[] = [];
    public displayTicketArchived: boolean = false;
@@ -19,6 +19,7 @@ export class TicketListComponent   {
    }
 
   ngOnInit() {
+    
   }
 
   ticketHasBeenSelected(hasBeenSelected: boolean) {
