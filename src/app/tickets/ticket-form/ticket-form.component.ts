@@ -2,15 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TicketService } from '../../../services/ticket/ticket.service';
 import { Ticket } from '../../../models/ticket';
-
+import { STUDENTS_MOCKED } from 'src/mocks/student.mock';
  
 @Component({
   selector: 'app-ticket-form',
   templateUrl: './ticket-form.component.html',
   styleUrls: ['./ticket-form.component.scss']
 })
-export class TicketFormComponent implements OnInit {
 
+ export class TicketFormComponent implements OnInit {
+
+  public studentList = STUDENTS_MOCKED;
   // Note: We are using here ReactiveForms to create our form. Be careful when you look for some documentation to
   // avoid TemplateDrivenForm (another type of form)
   /**
@@ -24,6 +26,7 @@ export class TicketFormComponent implements OnInit {
     this.ticketForm = this.formBuilder.group({
       title: [''],
       description: [''],
+      studentID: [''],
       major: ["false"],
       archived: false
     });
@@ -38,7 +41,8 @@ export class TicketFormComponent implements OnInit {
   addTicket() {
     const ticketToCreate: Ticket = this.ticketForm.getRawValue() as Ticket;
     ticketToCreate.date = new Date();
-    ticketToCreate.student = 'Me';
+    const studentId = this.ticketForm.value.studentId;
+    ticketToCreate.student = STUDENTS_MOCKED.find((s) => s.id == studentId);
     this.ticketService.addTicket(ticketToCreate);
   }
 

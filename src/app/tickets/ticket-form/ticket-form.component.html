@@ -24,9 +24,21 @@
     </select>
   </label>
   <br>
+<!-- creat a select for the student  -->
+  <label for="student">
+    Student <br>
+    <select class="input-custom" name="StudentID-field" id="studentID" [formControlName]="'studentID'">
+      <option id="selmaj" value="">--select a student--</option>
+      <option *ngFor="let student of studentList" [value]="student.id">{{student.id}} {{student.name}} {{student.surname}}</option>
+    </select>
+
+  </label>
+
+  <br>
+
 
   <button  type="submit" class="btn-custom" (click)="addTicket()">Create</button>
 </form>
 
 <!-- Uncomment below to see your form structure and how it changes-->
-<!-- <br>{{ticketForm.getRawValue() | json}}<br> -->
+<br>{{ticketForm.getRawValue() | json}}<br>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketService } from '../../../services/ticket/ticket.service';
 import { Ticket } from '../../../models/ticket';
+import { StudentService } from 'src/services/student/student.service';
 // import archived list
  
 @Component({
@@ -8,7 +9,7 @@ import { Ticket } from '../../../models/ticket';
   templateUrl: './ticket-list.component.html',
   styleUrls: ['./ticket-list.component.scss']
 })
-export class TicketListComponent implements OnInit {
+export class TicketListComponent   {
 
   public ticketList: Ticket[] = [];
    public displayTicketArchived: boolean = false;
