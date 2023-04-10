@@ -1,18 +1,26 @@
 import { Ticket } from '../models/ticket';
+import { majortype } from '../models/ticket';
+ const dateToday: Date = new Date();
 
-const dateToday: Date = new Date();
-
+import { STUDENTS_MOCKED } from './student.mock';
+ 
 export const TICKETS_MOCKED: Ticket[] = [
   {
-    title: 'SI4 in Madrid',
-    description: '',
+    title: 'Ticket 1',
+    description: 'Description 1',
     date: dateToday,
-    author: 'Paul'
+    student: STUDENTS_MOCKED[0],
+    major: majortype.GE,
+    archived: false,
   },
   {
-    title: 'SI5 in Paris',
-    description: 'Description du voyage',
+    title: 'Ticket 2',
+    description: 'Description 2',
     date: dateToday,
-    author: 'Anakin'
+    student:STUDENTS_MOCKED[1],
+    major: majortype.CS,
+    archived: false,
   },
+
 ];
+ 
